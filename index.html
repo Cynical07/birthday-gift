@@ -1,152 +1,136 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2575.4">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>From Hussain 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom right, #ffe6eb, #fffaf0);
+      color: #333;
+      overflow-x: hidden;
+    }
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .message {
+      display: none;
+      font-size: 1.4rem;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 2s ease;
+    }
+    .gift-box {
+      display: none;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+    .playlist-section {
+      display: none;
+      text-align: left;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .song-note {
+      margin-bottom: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 80px;
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;From Hussain 💌&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Georgia', serif;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(to bottom right, #ffe6eb, #fffaf0);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>color: #333;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>overflow-x: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.center {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 100vh;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>background: white;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 30px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 4px 20px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: transform 0.4s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transform: scale(1.02);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.message {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.4rem;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>transition: opacity 2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.gift-box {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.playlist-section {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>text-align: left;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>max-width: 800px;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin: 40px auto;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>padding: 0 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.song-note {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>iframe {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>height: 80px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;audio id="bg-music" loop&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;source src="until-i-found-you.mp3" type="audio/mpeg"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/audio&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="center" id="card-scene"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="card" onclick="openCard()"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;From Hussain 💌&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="center" id="message-scene"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="message-box" class="message"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="center" id="gift-scene"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="giftbox.png" alt="Gift Box" class="gift-box" onclick="showPlaylist()" id="gift-box" width="150" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="playlist-section" id="playlist-section"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;🎶 The Playlist&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;iframe src="https://open.spotify.com/embed/playlist/45v1ud2OL4GThrvFja9VGK?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"&gt;&lt;/iframe&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div id="song-notes"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="song-note"&gt;&lt;strong&gt;Say Yes to Heaven – Lana Del Rey&lt;/strong&gt;&lt;br&gt;Because if loving you meant saying yes to heaven, I'd say it every time.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="song-note"&gt;&lt;strong&gt;Apocalypse – Cigarettes After Sex&lt;/strong&gt;&lt;br&gt;It feels like what loving you in silence sounds like.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Add more song notes here --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;p style="margin-top: 40px; font-style: italic;"&gt;Thank you for being the music in my life. Happy Birthday. ❤️&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const messages = [</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"I could’ve just sent you a playlist...",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"But that wouldn’t show how much you mean to me.",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"So I made this for you instead.",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"Every song here reminded me of you.",</p>
-<p class="p1"><span class="Apple-converted-space">      </span>"Happy Birthday, love."</p>
-<p class="p1"><span class="Apple-converted-space">    </span>];</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>let messageIndex = 0;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>const msgBox = document.getElementById('message-box');</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function openCard() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('card-scene').style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('message-scene').style.display = 'flex';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('bg-music').play();</p>
-<p class="p1"><span class="Apple-converted-space">      </span>showNextMessage();</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function showNextMessage() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>if (messageIndex &gt;= messages.length) {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('message-scene').style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('gift-scene').style.display = 'flex';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>document.getElementById('gift-box').style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">        </span>return;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>msgBox.innerText = messages[messageIndex];</p>
-<p class="p1"><span class="Apple-converted-space">      </span>msgBox.style.opacity = 1;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>msgBox.style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>setTimeout(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">        </span>msgBox.style.opacity = 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>setTimeout(() =&gt; {</p>
-<p class="p1"><span class="Apple-converted-space">          </span>messageIndex++;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>showNextMessage();</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}, 2000);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}, 2500);</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>function showPlaylist() {</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('gift-scene').style.display = 'none';</p>
-<p class="p1"><span class="Apple-converted-space">      </span>document.getElementById('playlist-section').style.display = 'block';</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <audio id="bg-music" loop>
+    <source src="until-i-found-you.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="center" id="card-scene">
+    <div class="card" onclick="openCard()">
+      <h1>From Hussain 💌</h1>
+    </div>
+  </div>
+
+  <div class="center" id="message-scene">
+    <div id="message-box" class="message"></div>
+  </div>
+
+  <div class="center" id="gift-scene">
+    <img src="giftbox.png" alt="Gift Box" class="gift-box" onclick="showPlaylist()" id="gift-box" width="150" />
+  </div>
+
+  <div class="playlist-section" id="playlist-section">
+    <h2>🎶 The Playlist</h2>
+    <iframe src="https://open.spotify.com/embed/playlist/45v1ud2OL4GThrvFja9VGK?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+    <div id="song-notes">
+      <div class="song-note"><strong>Say Yes to Heaven – Lana Del Rey</strong><br>Because if loving you meant saying yes to heaven, I'd say it every time.</div>
+      <div class="song-note"><strong>Apocalypse – Cigarettes After Sex</strong><br>It feels like what loving you in silence sounds like.</div>
+      <!-- Add more song notes here --> 
+    </div>
+    <p style="margin-top: 40px; font-style: italic;">Thank you for being the music in my life. Happy Birthday. ❤️</p>
+  </div>
+
+  <script>
+    const messages = [
+      "I could’ve just sent you a playlist...",
+      "But that wouldn’t show how much you mean to me.",
+      "So I made this for you instead.",
+      "Every song here reminded me of you.",
+      "Happy Birthday, love."
+    ];
+
+    let messageIndex = 0;
+    const msgBox = document.getElementById('message-box');
+
+    function openCard() {
+      document.getElementById('card-scene').style.display = 'none';
+      document.getElementById('message-scene').style.display = 'flex';
+      document.getElementById('bg-music').play();
+      showNextMessage();
+    }
+
+    function showNextMessage() {
+      if (messageIndex >= messages.length) {
+        document.getElementById('message-scene').style.display = 'none';
+        document.getElementById('gift-scene').style.display = 'flex';
+        document.getElementById('gift-box').style.display = 'block';
+        return;
+      }
+      msgBox.innerText = messages[messageIndex];
+      msgBox.style.opacity = 1;
+      msgBox.style.display = 'block';
+      setTimeout(() => {
+        msgBox.style.opacity = 0;
+        setTimeout(() => {
+          messageIndex++;
+          showNextMessage();
+        }, 2000);
+      }, 2500);
+    }
+
+    function showPlaylist() {
+      document.getElementById('gift-scene').style.display = 'none';
+      document.getElementById('playlist-section').style.display = 'block';
+    }
+  </script>
 </body>
 </html>
