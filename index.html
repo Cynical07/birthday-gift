@@ -1,163 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Happy Birthday Bella</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bella's Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto&display=swap');
-
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #f8e8e8, #ffe6f0);
-      color: #333;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
     }
-
-    .message-container, .gift-container, .playlist-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .intro {
+      font-size: 1.5rem;
+      line-height: 2;
       text-align: center;
-      padding: 20px;
+      animation: fadeIn 3s ease forwards;
     }
-
     .from-hussain {
-      font-size: 48px;
       font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
       font-weight: bold;
-      margin-bottom: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease forwards;
     }
-
-    .message {
-      font-size: 24px;
-      max-width: 800px;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-      margin: 10px 0;
-      font-style: italic;
+    .gift {
+      display: flex;
+      justify-content: center;
+      margin-top: 60px;
     }
-
-    .gift-button {
-      display: none;
-      margin-top: 20px;
-      font-size: 20px;
+    .gift button {
+      background-color: #ff5e78;
+      color: white;
+      font-size: 1.3rem;
       padding: 15px 30px;
-      background-color: #ffb6c1;
       border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.2s ease;
-    }
-
-    .gift-button:hover {
-      transform: scale(1.05);
-    }
-
-    .song-card {
-      background-color: #ffffffcc;
       border-radius: 12px;
-      padding: 15px 25px;
-      margin: 10px auto;
-      max-width: 600px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
     }
-
-    .song-card h3 {
-      margin: 0 0 10px;
-      font-family: 'Great Vibes', cursive;
-      font-size: 28px;
-      color: #d14b8f;
+    .gift button:hover {
+      transform: scale(1.1);
     }
-
-    .song-card p {
+    .song-list {
+      margin-top: 50px;
+    }
+    .song {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(5px);
+    }
+    .song h3 {
       margin: 0;
-      font-size: 18px;
+      font-size: 1.5rem;
+      color: #ffd1dc;
     }
-
-    a {
-      color: #d14b8f;
-      font-weight: bold;
+    .song p {
+      font-size: 1.1rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
-
 <body>
-  <div class="message-container" id="messagePage">
+  <div class="container">
     <div class="from-hussain">From Hussain</div>
-    <div class="message">Happy Birthday Bella!</div>
-    <div class="message">For your birthday, I wanted to gift you something special...</div>
-    <div class="message">...because you made me feel special.</div>
-    <div class="message">Every song here reminded me of you.</div>
-    <button class="gift-button" onclick="showPlaylist()">Click here</button>
+    <div class="intro">
+      <p>Happy Birthday Bella! For your birthday, I wanted to gift you something special, because you made me feel special. Every song here reminded me of you.</p>
+    </div>
+    <div class="gift">
+      <button onclick="window.location.href='songs.html'">Click Here</button>
+    </div>
   </div>
-
-  <div class="playlist-container" id="playlistPage" style="display: none;">
-    <h2 style="font-family: 'Great Vibes', cursive; font-size: 36px;">Every song has a reason...</h2>
-
-    <!-- Each song explanation as a card -->
-    <div class="song-card">
-      <h3>Say Yes To Heaven</h3>
-      <p>Cuz I've got my mind on you.</p>
-    </div>
-    <div class="song-card">
-      <h3>Apocalypse</h3>
-      <p>Whenever I listen to this song, I just can't help but imagine kissing your lips.</p>
-    </div>
-    <div class="song-card">
-      <h3>Diet Mountain Dew</h3>
-      <p>The first reel you sent me had this song.</p>
-    </div>
-    <div class="song-card">
-      <h3>Reflections</h3>
-      <p>This song makes me feel like a teenager who found the love of his life.</p>
-    </div>
-    <div class="song-card">
-      <h3>Something About You</h3>
-      <p>I'm convinced this song is about you. Because you're the prettiest girl I've ever seen.</p>
-    </div>
-    <!-- Add the rest of the song cards here following the same pattern -->
-    <div class="song-card">
-      <h3>I Think They Call This Love</h3>
-      <p>Because I am in love with you, Bella Sia Laurence.</p>
-    </div>
-
-    <p style="margin-top: 40px; font-size: 20px;">🎵 Listen to the full playlist <a href="https://open.spotify.com/playlist/45v1ud2OL4GThrvFja9VGK?si=156572a757384ac4" target="_blank">here</a>.</p>
-  </div>
-
-  <audio autoplay loop>
-    <source src="until-i-found-you.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    const messages = document.querySelectorAll('.message');
-    let currentMessage = 0;
-
-    function fadeMessages() {
-      if (currentMessage < messages.length) {
-        messages[currentMessage].style.opacity = 1;
-        setTimeout(() => {
-          messages[currentMessage].style.opacity = 0;
-          currentMessage++;
-          fadeMessages();
-        }, 2500);
-      } else {
-        document.querySelector('.gift-button').style.display = 'inline-block';
-      }
-    }
-
-    fadeMessages();
-
-    function showPlaylist() {
-      document.getElementById('messagePage').style.display = 'none';
-      document.getElementById('playlistPage').style.display = 'flex';
-    }
-  </script>
 </body>
-
 </html>
