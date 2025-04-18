@@ -1,156 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday Bella</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #f7d9e3, #f3e5f5);
-      font-family: 'Poppins', sans-serif;
-      color: #333;
+      background: linear-gradient(to bottom right, #fbd3e9, #bb377d);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
       overflow-x: hidden;
     }
-    .message-container {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      width: 90%;
+
+    .container {
+      padding: 3rem 1rem;
     }
+
     .message {
-      font-size: 1.5em;
-      margin-bottom: 20px;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
       opacity: 0;
       animation: fadeInOut 3s ease-in-out forwards;
     }
+
+    .message:nth-child(2) { animation-delay: 3s; }
+    .message:nth-child(3) { animation-delay: 6s; }
+
     @keyframes fadeInOut {
       0% { opacity: 0; }
-      25% { opacity: 1; }
-      75% { opacity: 1; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
       100% { opacity: 0; }
     }
-    .click-here {
+
+    .gift-section {
       display: none;
-      margin-top: 200px;
-      text-align: center;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .gift-button {
+      background-color: #fff;
+      color: #bb377d;
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 25px;
       cursor: pointer;
-      font-size: 1.8em;
-      font-weight: bold;
-      background-color: #ff80ab;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 20px;
-      transition: background-color 0.3s;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
     }
-    .click-here:hover {
-      background-color: #ff4081;
+
+    .gift-button:hover {
+      transform: scale(1.05);
     }
-    .playlist-container {
+
+    .song-list {
       display: none;
-      padding: 40px 20px;
-      text-align: left;
-      max-width: 900px;
-      margin: 0 auto;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 20px;
+      margin-top: 3rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     .song {
-      margin-bottom: 25px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #fff;
+      text-align: left;
     }
-    .song-title {
-      font-weight: 600;
-      font-size: 1.2em;
-      color: #e91e63;
-    }
-    .song-reason {
-      margin-top: 8px;
-    }
-    audio {
-      position: fixed;
-      top: 10px;
-      left: 10px;
+
+    a {
+      color: #fff;
+      font-weight: bold;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <audio autoplay loop>
-    <source src="https://cdn.pixabay.com/audio/2023/03/01/audio_dce6f3c1dc.mp3" type="audio/mp3">
+    <source src="https://upload.wikimedia.org/wikipedia/commons/9/95/Stephen_Sanchez_-_Until_I_Found_You.ogg" type="audio/ogg">
   </audio>
 
-  <div class="message-container" id="messages">
-    <div class="message" style="animation-delay: 0s">Happy Birthday Bella!</div>
-    <div class="message" style="animation-delay: 3s">For your birthday, I wanted to gift you something special,</div>
-    <div class="message" style="animation-delay: 6s">because you made me feel special.</div>
-    <div class="message" style="animation-delay: 9s">Every song here reminded me of you.</div>
-  </div>
+  <div class="container">
+    <div class="message" style="animation-delay: 0s;">From Hussain</div>
+    <div class="message" style="animation-delay: 3s;">Happy Birthday Bella!</div>
+    <div class="message" style="animation-delay: 6s;">For your birthday, I wanted to gift you something special, because you made me feel special. Every song here reminded me of you.</div>
 
-  <div class="click-here" id="gift">Click here</div>
+    <div class="gift-section" id="giftSection">
+      <button class="gift-button" onclick="showSongs()">Click here</button>
+    </div>
 
-  <div class="playlist-container" id="playlist">
-    <div class="song"><div class="song-title">Say Yes To Heaven:</div><div class="song-reason">Cuz I've got my mind on you.</div></div>
-    <div class="song"><div class="song-title">Apocalypse:</div><div class="song-reason">Whenever I listen to this song, I just can't help but imagine kissing your lips.</div></div>
-    <div class="song"><div class="song-title">Diet Mountain Dew:</div><div class="song-reason">The first reel you sent me had this song.</div></div>
-    <div class="song"><div class="song-title">Reflections:</div><div class="song-reason">This song makes me feel like a teenager who found the love of his life.</div></div>
-    <div class="song"><div class="song-title">Something about you:</div><div class="song-reason">I'm convinced this song is about you. Because you're the prettiest girl I've ever seen.</div></div>
-    <div class="song"><div class="song-title">Lovers Rock:</div><div class="song-reason">This song makes me think we're in the same room in the middle of the night dancing together.</div></div>
-    <div class="song"><div class="song-title">No One Noticed:</div><div class="song-reason">Every time I listen to this song I get reminded that I will meet you one day. And that gives me hope.</div></div>
-    <div class="song"><div class="song-title">Good looking:</div><div class="song-reason">This song is as dreamy as you are. Also I like it when you call me your pretty boy :)</div></div>
-    <div class="song"><div class="song-title">I bet on losing dogs:</div><div class="song-reason">You told me about this song and now I love it.</div></div>
-    <div class="song"><div class="song-title">M.:</div><div class="song-reason">Your words, Your eyes, Your hands are only for me, Sevgilim.</div></div>
-    <div class="song"><div class="song-title">MIDDLE OF THE NIGHT:</div><div class="song-reason">Because nights are lonely without you.</div></div>
-    <div class="song"><div class="song-title">Until I Found You:</div><div class="song-reason">I would never fall in love, unless it's you I fall into.</div></div>
-    <div class="song"><div class="song-title">Dandelions:</div><div class="song-reason">Because I think you're the love that comes once in a lifetime.</div></div>
-    <div class="song"><div class="song-title">Sweater Weather:</div><div class="song-reason">Because I need you to hold me when it's cold.</div></div>
-    <div class="song"><div class="song-title">Sunsetz:</div><div class="song-reason">I want to watch the sunset with you.</div></div>
-    <div class="song"><div class="song-title">K.:</div><div class="song-reason">I think like you best when you're just with me, and no one else.</div></div>
-    <div class="song"><div class="song-title">My Love Mine All Mine:</div><div class="song-reason">I always loved this song, but I started to love it more when I found out it was one of your favorites.</div></div>
-    <div class="song"><div class="song-title">Golden Hour:</div><div class="song-reason">You are my golden girl.</div></div>
-    <div class="song"><div class="song-title">Here With Me:</div><div class="song-reason">I want to grow old with you until we float off in the wind.</div></div>
-    <div class="song"><div class="song-title">Backstreet Girl:</div><div class="song-reason">Because you have a heart of gold, and I don't want to hurt you. But I don't want you to be anyone else's girl either.</div></div>
-    <div class="song"><div class="song-title">Star Shopping:</div><div class="song-reason">You had this song in your highlights and you've got fire taste.</div></div>
-    <div class="song"><div class="song-title">Heavy:</div><div class="song-reason">Same as Star Shopping. Also, I don't wanna fall in love with another. Even in another life.</div></div>
-    <div class="song"><div class="song-title">SLOW DANCING IN THE DARK:</div><div class="song-reason">Imagining you and I dancing in the dark together feels so good. I want it so bad.</div></div>
-    <div class="song"><div class="song-title">Heather:</div><div class="song-reason">Because you're out of my league.</div></div>
-    <div class="song"><div class="song-title">Those Eyes:</div><div class="song-reason">I get lost in your eyes every time I look at them. I just can't wait to stare into them when we meet.</div></div>
-    <div class="song"><div class="song-title">Not Allowed:</div><div class="song-reason">You had this in your Highlights, too. You're introducing me to some fire songs lol.</div></div>
-    <div class="song"><div class="song-title">Treat you better:</div><div class="song-reason">Cuz I know I can treat you better than anyone else can.</div></div>
-    <div class="song"><div class="song-title">Let me love you:</div><div class="song-reason">The thought of me and you driving at night together and listening to this song is amazing.</div></div>
-    <div class="song"><div class="song-title">Shape of you:</div><div class="song-reason">Singing this with you on call was sooo fun.</div></div>
-    <div class="song"><div class="song-title">Lost In Japan:</div><div class="song-reason">Do you wanna get lost in Japan with me?</div></div>
-    <div class="song"><div class="song-title">Double take:</div><div class="song-reason">Because you're all I see in a crowd.</div></div>
-    <div class="song"><div class="song-title">Headlock:</div><div class="song-reason">You were right, this song IS fire.</div></div>
-    <div class="song"><div class="song-title">One Kiss:</div><div class="song-reason">Whenever I imagine kissing you, my lips start tingling or whatever. I already know our first kiss is going to be amazing!</div></div>
-    <div class="song"><div class="song-title">A thousand years:</div><div class="song-reason">Because this song makes me feel like I was born to be yours. And I think I am.</div></div>
-    <div class="song"><div class="song-title">Die For You:</div><div class="song-reason">Because THE DISTANCE AND THE TIME BETWEEN US IT'LL NEVER CHANGE MY MIND CUZ BABY I WILL DIE FOR YOUUUU</div></div>
-    <div class="song"><div class="song-title">Nights Like This:</div><div class="song-reason">I often think of me and you sitting together on a bench and listening to this together. Or any other song.</div></div>
-    <div class="song"><div class="song-title">死ぬのがいいわ (Shinunoga E-Wa):</div><div class="song-reason">It means I'd rather die than lose you.</div></div>
-    <div class="song"><div class="song-title">Sex Sounds:</div><div class="song-reason">SORRY ABOUT THIS ONE BUT YEAH IT MADE ME THINK OF YOU</div></div>
-    <div class="song"><div class="song-title">Snowman:</div><div class="song-reason">Because I am your snowman.</div></div>
-    <div class="song"><div class="song-title">As The World Caves In:</div><div class="song-reason">Because OH GIRL ITS YOUUUUUUU</div></div>
-    <div class="song"><div class="song-title">Kingston:</div><div class="song-reason">The day that I'd met you I started DREAAMINGGGG</div></div>
-    <div class="song"><div class="song-title">Comethru:</div><div class="song-reason">I was listening to this song while drinking tea and I thought of you.</div></div>
-    <div class="song"><div class="song-title">Umbrella:</div><div class="song-reason">Cuz I'll never leave you even through the dark times.</div></div>
-    <div class="song"><div class="song-title">I think they call this love:</div><div class="song-reason">Because I am in love with you, Bella Sia Laurence.</div></div>
-    <p style="margin-top: 30px; text-align: center;"><a href="https://open.spotify.com/playlist/45v1ud2OL4GThrvFja9VGK?si=156572a757384ac4" target="_blank">Click here to open the playlist</a></p>
+    <div class="song-list" id="songList">
+      <!-- Song entries -->
+      <div class="song"><strong>Say Yes To Heaven:</strong> Cuz I've got my mind on you.</div>
+      <div class="song"><strong>Apocalypse:</strong> Whenever I listen to this song, I just can't help but imagine kissing your lips.</div>
+      <div class="song"><strong>Diet Mountain Dew:</strong> The first reel you sent me had this song.</div>
+      <div class="song"><strong>Reflections:</strong> This song makes me feel like a teenager who found the love of his life.</div>
+      <div class="song"><strong>Something about you:</strong> I'm convinced this song is about you. Because you're the prettiest girl I've ever seen.</div>
+      <div class="song"><strong>Lovers Rock:</strong> This song makes me think we're in the same room in the middle of the night dancing together.</div>
+      <div class="song"><strong>No One Noticed:</strong> Every time I listen to this song I get reminded that I will meet you one day. And that gives me hope.</div>
+      <div class="song"><strong>Good looking:</strong> This song is as dreamy as you are. Also I like it when you call me your pretty boy :)</div>
+      <div class="song"><strong>I bet on losing dogs:</strong> You told me about this song and now I love it.</div>
+      <div class="song"><strong>M.:</strong> Your words, Your eyes, Your hands are only for me, Sevgilim.</div>
+      <div class="song"><strong>MIDDLE OF THE NIGHT:</strong> Because nights are lonely without you.</div>
+      <div class="song"><strong>Until I Found You:</strong> I would never fall in love, unless it's you I fall into.</div>
+      <div class="song"><strong>Dandelions:</strong> Because I think you're the love that comes once in a lifetime.</div>
+      <div class="song"><strong>Sweater Weather:</strong> Because I need you to hold me when it's cold.</div>
+      <div class="song"><strong>Sunsetz:</strong> I want to watch the sunset with you.</div>
+      <div class="song"><strong>K.:</strong> I think I like you best when you're just with me, and no one else.</div>
+      <div class="song"><strong>My Love Mine All Mine:</strong> I always loved this song, but I started to love it more when I found out it was one of your favorites.</div>
+      <div class="song"><strong>Golden Hour:</strong> You are my golden girl.</div>
+      <div class="song"><strong>Here With Me:</strong> I want to grow old with you until we float off in the wind.</div>
+      <div class="song"><strong>Backstreet Girl:</strong> Because you have a heart of gold, and I don't want to hurt you. But I don't want you to be anyone else's girl either.</div>
+      <div class="song"><strong>Star Shopping:</strong> You had this song in your highlights and you've got fire taste.</div>
+      <div class="song"><strong>Heavy:</strong> Same as Star Shopping. Also, I don't wanna fall in love with another. Even in another life.</div>
+      <div class="song"><strong>SLOW DANCING IN THE DARK:</strong> Imagining you and I dancing in the dark together feels so good. I want it so bad.</div>
+      <div class="song"><strong>Heather:</strong> Because you're out of my league.</div>
+      <div class="song"><strong>Those Eyes:</strong> I get lost in your eyes every time I look at them. I just can't wait to stare into them when we meet.</div>
+      <div class="song"><strong>Not Allowed:</strong> You had this in your Highlights, too. You're introducing me to some fire songs lol.</div>
+      <div class="song"><strong>Treat You Better:</strong> Cuz I know I can treat you better than anyone else can.</div>
+      <div class="song"><strong>Let me love you:</strong> The thought of me and you driving at night together and listening to this song is amazing.</div>
+      <div class="song"><strong>Shape of you:</strong> Singing this with you on call was sooo fun.</div>
+      <div class="song"><strong>Lost In Japan:</strong> Do you wanna get lost in Japan with me?</div>
+      <div class="song"><strong>Double take:</strong> Because you're all I see in a crowd.</div>
+      <div class="song"><strong>Headlock:</strong> You were right, this song IS fire.</div>
+      <div class="song"><strong>One Kiss:</strong> Whenever I imagine kissing you, my lips start tingling or whatever. I already know our first kiss is going to be amazing!</div>
+      <div class="song"><strong>A thousand years:</strong> Because this song makes me feel like I was born to be yours. And I think I am.</div>
+      <div class="song"><strong>Die For You:</strong> Because THE DISTANCE AND THE TIME BETWEEN US IT'LL NEVER CHANGE MY MIND CUZ BABY I WILL DIE FOR YOUUUU</div>
+      <div class="song"><strong>Nights Like This:</strong> I often think of me and you sitting together on a bench and listening to this together. Or any other song.</div>
+      <div class="song"><strong>死ぬのがいいわ (Shinunoga E-wa):</strong> It means I'd rather die than lose you.</div>
+      <div class="song"><strong>Sex Sounds:</strong> SORRY ABOUT THIS ONE BUT YEAH IT MADE ME THINK OF YOU</div>
+      <div class="song"><strong>Snowman:</strong> Because I am your snowman.</div>
+      <div class="song"><strong>As The World Caves In:</strong> Because OH GIRL ITS YOUUUUUUU</div>
+      <div class="song"><strong>Kingston:</strong> The day that I'd met you I started DREAAMINGGGG</div>
+      <div class="song"><strong>Comethru:</strong> I was listening to this song while drinking tea and I thought of you.</div>
+      <div class="song"><strong>Umbrella:</strong> Cuz I'll never leave you even through the dark times.</div>
+      <div class="song"><strong>I think they call this love:</strong> Because I am in love with you, Bella Sia Laurence.</div>
+      <br />
+      <a href="https://open.spotify.com/playlist/45v1ud2OL4GThrvFja9VGK?si=156572a757384ac4" target="_blank">🎵 Open Playlist on Spotify</a>
+    </div>
   </div>
 
   <script>
     setTimeout(() => {
-      document.getElementById("messages").style.display = "none";
-      document.getElementById("gift").style.display = "block";
-    }, 12000);
+      document.querySelector('.message').style.display = 'none';
+      document.querySelectorAll('.message').forEach(el => el.style.display = 'none');
+      document.getElementById('giftSection').style.display = 'flex';
+    }, 10000);
 
-    document.getElementById("gift").addEventListener("click", () => {
-      document.getElementById("gift").style.display = "none";
-      document.getElementById("playlist").style.display = "block";
-    });
+    function showSongs() {
+      document.getElementById('giftSection').style.display = 'none';
+      document.getElementById('songList').style.display = 'block';
+    }
   </script>
 </body>
 </html>
